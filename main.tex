@@ -1,0 +1,182 @@
+\documentclass{mgggarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+
+% This document is an example for how to use this LaTeX template.
+
+\title{Comparison of Districting Plans\\ for the Virginia House of Delegates}
+\author{Metric Geometry and Gerrymandering Group}
+\date{November 2018}
+
+\begin{document}
+
+\begin{titlepage}
+
+\maketitle
+
+\begin{abstract}
+At the time of writing, Virginia is in the process of replacing its House of Delegates districting
+plan after eleven of the districts were ruled unconstitutional by a District Court in June 2018.
+This report presents a large ensemble of alternative valid districting plans, which we propose
+to use as a baseline for comparison in the evaluation of newly proposed plans. Our method
+highlights and quantifies the dilutive effects of packing Black Voting Age Population.
+This is a novel application to racial gerrymandering of industry-standard techniques from
+statistics and computational science.
+\end{abstract}
+
+\tableofcontents
+
+\end{titlepage}
+
+\decoratedsection{Summary Report}
+
+\subsection{Introduction}
+
+Using a mathematical sampling technique called a Markov chain, we have analyzed numerous
+alternatives for districting the portion of the Virginia House of Delegates map that is affected by
+the federal court ruling of June 26, 2018 \footnote{In this decade, the drawing of political boundaries in Virginia was particularly
+contentious, with a significant number of lawsuits at all levels. A detailed summary of this process can be found at
+\url{https://ballotpedia.org/Redistricting_in_Virginia_after_the_2010_census}.}. The results of our trials show the power and flexibility
+of approaches from mathematics and computing for assessing proposed maps in a redistricting
+process. A technical report detailing the findings follows below. This section serves as a nontechnical
+overview of findings.
+
+\subsection{Scope and goal for study}
+
+In a June decision of the Eastern District Court of Virginia, 11 House districts were found to be
+unconstitutional; by expanding to the districts neighboring those, we arrive at a minimum of 33
+House districts out of 100 that must be reexamined \footnote{Bethune–Hill v. Virginia Board of Elections}.
+The majority of the three-judge panel found that racial considerations had predominated over
+traditional districting principles in the plan enacted in 2011, in particular, that Black residents
+were concentrated in a way that diluted their voting strength.
+
+We have analyzed a collection of different House plans: the enacted plan approved by the Legislature
+in 2011 as House Bill 5005, the Democratic Caucus Plan released in August as HB 7001, the
+“reform map” independently released by the Princeton Gerrymandering Project on Aug 28, 2018,
+and a sequence of three plans circulated by Republican legislators in September and October. For
+each of these, our analysis focuses on the distribution of Black Voting Age Population, or BVAP,
+across the districts, though we note that this analysis can equally well be extended to focus on
+partisan performance, preservation of city boundaries, or other quantifiable priorities.
+
+It was confirmed in statements to the court that the 2011 Enacted plan was designed to have
+$\geq55\%$ BVAP in 11 districts, which we may call the packed districts, without an effort to justify that
+numerical cutoff on the level of the individual districts. Compliance with the Voting Rights Act in
+no way requires this or any other numerical BVAP level. The conspicuous elevation of BVAP in the
+11 packed districts must necessarily cause depressed BVAP in the 22 neighboring districts. We set
+out to measure the pattern of that dilutive effect.
+
+\paragraph{Example Paragraph.} Without a baseline for the BVAP distribution, it is impossible to assess whe\-ther the reduced BVAP
+occurs in patterns that indicate a cost in additional opportunity districts, given the districting rules
+and priorities. Our main goal is to observe and quantify the interplay between elevated BVAP in
+part of the map and broader effects on the districting outcomes. The Markov chain method allows
+us to construct a baseline for comparison, in order to quantify these tradeoffs.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.7 \textwidth]{figure}
+    \caption{%
+        Comparison of the BVAP of the six proposed plans to an ensemble of neutral comparison maps that has been
+        winnowed so each district has $\leq 60\%$ BVAP. The 33 districts of the affected region are arranged on the $x$
+        axis, and the percentages of Black Voting Age Population are shown on the $y$ axis. The $37-55\%$ BVAP zone
+        is marked in green, and the districts are separated into groups for ease of interpretation.
+    }
+    \label{fig:my_label}
+\end{figure}
+
+\subsection{Our main tool: an ensemble of valid alternative plans}
+
+Using Markov chain techniques, we can apply long sequences of transformations to plans being
+evaluated, and to neutral “seed” plans, to assemble large collections of districting plans that are
+constructed only according to the stated rules and principles of a jurisdiction. For this study, our
+ensemble is built to take into account traditional districting principles in play in Virginia. Our
+Markov chain sampling process has population equality, contiguity, and compactness built into the
+steps. In this way, we get a picture of how well the proposed plans comport with the principles
+found in state and federal law and we gain a sense of how much these principles may be sacrificed
+if other unstated goals are in play.
+
+\subsection{Black Voting Age Population and the Crucial 37-55\% Range}
+
+The recent lawsuit was brought under the federal Voting Rights Act of 1965, which continues to
+be a fundamental check on redistricting practices. The range of BVAP values from 37\% and 55\%
+is a crucial zone for VRA analysis nationally and in Virginia in particular. Though we emphasize
+that BVAP alone is never enough to confirm VRA compliance, this wide range of BVAP values
+often triggers the evaluation of racially polarized voting (RPV) patterns as one of several other
+considerations addressing the totality of circumstances in a possible VRA violation. Nationally, 37\%
+is an empirical bright line for congressional voting: 32 out of 34 current U.S. congressional districts
+with at least 37\% BVAP had Representatives in the 115th Congress who belong to the Congressional
+Black Caucus, and the ratio drops off precipitously below that level.5 Furthermore, Virginia-specific
+data legitimates the significance of bracketing the 37-55\% range. The expert reports in Bethune–Hill
+v. Virginia Board of Elections show no RPV evidence that any House districts in Virginia that would
+require numbers over 55\% BVAP to comply with the Voting Rights Act, and the 2011 Enacted plan
+was specifically faulted for aiming districts above the 55\% line. Indeed, the report of Maxwell
+Palmer indicates that a BVAP of 45\% would suffice for all but one House district, and 48\% would
+suffice for every House district in the state.6
+
+In addition to Palmer’s RPV analysis, we note that
+most of the 33-district affected region is covered by two congressional districts, VA-3 and VA-4,
+which are comfortably electing Black representatives with BVAP of 45.1\% and 41.5\%, respectively.
+It is important to remember that in some cases, less than 37\% BVAP can suffice for a district to
+provide an opportunity to elect a candidate of choice of the Black community, especially in coalition
+with other groups; in rare cases (particularly in other parts of the country), more than 55\% BVAP
+may be legitimately required. Still, the figures below highlight the 37-55\% range to illustrate the
+statistical effects of packing Black population: We can measure the cost of pushing districts above
+that crucial zone by observing whether it causes other districts to be pushed below.
+
+\subsection{Methods and Results}
+
+We have constructed large collections of 33-district plans called ”ensembles,” defined on the region
+of the state that is directly affected by the court ruling. To compare the BVAP levels among those
+plans, we have indexed the 33 districts from the one with lowest BVAP (1st, appearing left-most in
+the figure) to the one with highest BVAP (33rd). That means that in each plan, the twelve districts
+with the highest levels of Black Voting Age Population are indexed 22-33, and are separated by a
+dotted line in the figure. We have broken the districts into groups—top 12, next 4, next 9, next 4,
+final 4—to make it easier to visualize where the effects of elevated BVAP occur.
+Our algorithm begins with many different valid starting plans: the plans that have been proposed
+for adoption and 100 neutral maps, labeled Seed1 through Seed100. We then perform chains
+of random alterations, collecting a large sample from the resulting maps as our ensemble of
+comparable plans.
+
+Figure 1 shows one compelling set of results as a box-and-whisker plot. It depicts the ensemble
+of 20,000 steps from a ”recombination” Markov chain, winnowed to show the plans that do not
+exceed 60\% BVAP. (Many more figures with different combinations of hypotheses are described in
+the technical report, lending robust support to similar conclusions.) The boxes show the 25th-75th
+percentile of BVAP observed for a district in that position; the median is marked with a horizontal
+line. The whiskers show the 1st-99th percentile of observations. When a colored dot falls far outside
+of the whiskers, it means that the plan is an extreme outlier in its racial composition for that district.
+The plot gives unmistakable evidence of where and how elevating BVAP in the top 12 districts
+depresses BVAP in the remainder of the plans. Rather than reducing the BVAP in the areas where it
+was already very low, we see that the dilutive effects impact districts that were at or nearing the
+zone in which statistical analysis has indicated opportunities to elect more candidates of choice for
+the Black community.
+
+\subsection{Conclusions}
+
+\begin{itemize}
+    \item By starkly elevating BVAP in the six districts indexed 22-27, the 2011 Enacted plan causes at
+least ten and up to 17 other districts to have depressed BVAP levels, far below what would be
+expected from race-neutral redistricting. The 2011 Enacted plan has no districts at all in the
+crucial range of 37\%-55\% BVAP, while neutral redistricting tells us to expect as many as ten.
+
+    \item The Democratic Caucus plan and all new Republican proposals temper the packing in the top
+districts but only push one additional district over 37\% BVAP.
+
+    \item The Princeton plan—and hundreds of thousands of race-neutral plans found by Markov chain
+techniques—push three additional districts over that level without sacrificing population balance,
+contiguity, or compactness. In fact, our methods suggest that a substantial share of race-neutral
+plans that comport with traditional districting principles would do so.
+\end{itemize}
+
+We emphasize that there are many local and community-based considerations in play when
+approving districting plans, and the Markov chain approach only provides data relevant to some
+of these. It does so by illustrating the range of properties typically observable in the enormous
+landscape of valid plans. We view this approach as one tool among many in a complex process for
+evaluating districting plans, and we hope it will incorporated into the analysis of proposed plans
+to the House of Delegates. We are prepared to analyze new maps as they are proposed.
+
+\begin{contributors}
+Daryl R. DeFord, Moon Duchin, and Justin Solomon contributed to this report.
+\end{contributors}
+
+\end{document}
