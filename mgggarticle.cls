@@ -21,7 +21,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{tocloft}
 \RequirePackage{hyperref}
-\RequirePackage[default,light,bold]{sourceserifpro}
+\RequirePackage[default,light,bold]{sourceserif}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
@@ -53,7 +53,8 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=mgggdarkblue,
-    urlcolor=mgggdarkblue
+    urlcolor=mgggdarkblue,
+    citecolor=mgggdarkblue
 }
 
 % Graphics path
@@ -244,6 +245,7 @@
 
 % Contributors
 \newenvironment{contributors}{%
+    \vskip 1em
     \begin{mdframed}[style=abstract]
     {\sffamily\Large Contributors}
     \par\noindent\ignorespaces
