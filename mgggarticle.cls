@@ -21,7 +21,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{tocloft}
 \RequirePackage{hyperref}
-\RequirePackage[default,light,bold]{sourceserif}
+\RequirePackage[default,light,bold]{sourceserifpro}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
