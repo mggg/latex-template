@@ -193,8 +193,8 @@
 \renewenvironment{abstract}{%
     \begin{mdframed}[style=abstract]
     {\sffamily\Large Abstract}
-    \par\noindent
-}{\end{mdframed}}
+    \par\noindent\ignorespaces
+}{\ignorespacesafterend\end{mdframed}}
 
 % Footnotes
 \renewcommand{\footnoterule}{%
@@ -246,5 +246,5 @@
 \newenvironment{contributors}{%
     \begin{mdframed}[style=abstract]
     {\sffamily\Large Contributors}
-    \par\noindent
-}{\end{mdframed}}
+    \par\noindent\ignorespaces
+}{\ignorespacesafterend\end{mdframed}}
